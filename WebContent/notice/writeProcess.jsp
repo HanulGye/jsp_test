@@ -6,16 +6,20 @@
     pageEncoding="UTF-8"%>
     
 <% 
-	
+	MultipartRequest multi = null;	
+	String path = null;
 	// 단위는 byte. 
 	int max = 1024*1024*10;
 
 	// 저장할 path는 이렇게 지정하는게 안전
-	String path = request.getServletContext().getRealPath("upload");
+	
+	path = request.getServletContext().getRealPath("upload");
 	System.out.println(path);
 	
-	try{
-	MultipartRequest multi = new MultipartRequest(request, path, max, "UTF-8", new DefaultFileRenamePolicy());
+	
+	multi = new MultipartRequest(request, path, max, "UTF-8", new DefaultFileRenamePolicy());
+	// MultipartRequest객체가 성공적으로 만들어지면 path 경로에 file upload가 완료됨. 
+
 	//파일의 정보
 	String fName = multi.getFilesystemName("f1");//매개변수로 parameter의 이름
 	String oName = multi.getOriginalFileName("f1");
@@ -25,10 +29,7 @@
 	
 	System.out.println(fName);
 	System.out.println(oName);
-	} catch(Exception e){
-		
-	}	
-	// MultipartRequest객체가 성공적으로 만들어지면 path 경로에 file upload가 완료됨. 
+	
 	
 	
 	

@@ -9,7 +9,11 @@
 <body>
 	<div>
 		<form action="./writeProcess.jsp" method="post" enctype="multipart/form-data">
-			<input type="file" name="f1"> 
+			<p>subject <input type="text" name="subject"></p>
+			<p>content <input type="text" name="content"></p>
+			<p>writer <input type="text" name="writer"></p>
+			<p><input type="file" name="f1"></p>
+			<p><input type="file" name="f2"></p>  
 			<button>submit</button>		
 		</form>
 	

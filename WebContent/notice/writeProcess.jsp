@@ -40,9 +40,9 @@
 	//System.out.println(oName);
 	
 	NoticeDTO nDto = new NoticeDTO();
-	nDto.setSubject(request.getParameter("subject"));
-	nDto.setContent(request.getParameter("content"));
-	nDto.setWriter(request.getParameter("writer"));
+	nDto.setSubject(multi.getParameter("subject"));
+	nDto.setContent(multi.getParameter("content"));
+	nDto.setWriter(multi.getParameter("writer"));
 
 	NoticeDAO nDao = new NoticeDAO();
 	int num = nDao.getNo();

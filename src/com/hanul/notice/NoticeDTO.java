@@ -6,7 +6,7 @@ public class NoticeDTO {
 	private int no, hit;
 	private String subject, content, writer;
 	private Date reg_date;
-	
+	int num = 0;
 	
 	public int getNo() {
 		return no;
